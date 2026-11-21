@@ -1,0 +1,39 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# output & bundle
+out/
+dist/
+build/
+*.tgz
+
+# code coverage
+coverage/
+*.lcov
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun.log*
+
+# environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# caches
+.eslintcache
+.cache/
+*.tsbuildinfo
+
+# IDEs & OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.DS_Store
+Thumbs.db
