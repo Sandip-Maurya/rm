@@ -1,6 +1,6 @@
 import React from "react";
 import { Easing, interpolate, useCurrentFrame } from "remotion";
-import { MaskedSlideUpProps } from "./types";
+import type { MaskedSlideUpProps } from "./types";
 
 export const MaskedSlideUp: React.FC<MaskedSlideUpProps> = ({
   category = "ANNUAL REPORT 2026",

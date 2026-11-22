@@ -8,6 +8,13 @@ import { WordByWord } from "./practices/practice-05-word-by-word";
 import { MaskedSlideUp } from "./practices/practice-06-masked-slide-up";
 import { TerminalTypewriter } from "./practices/practice-07-terminal-typewriter";
 import { DynamicHighlighter } from "./practices/practice-08-dynamic-highlighter";
+import {
+  Python315Part1,
+  VIDEO_WIDTH,
+  VIDEO_HEIGHT,
+  FPS,
+  TOTAL_DURATION_IN_FRAMES,
+} from "./projects/python-315-features-part1";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -124,6 +131,18 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1920}
         height={1080}
+      />
+
+      <Composition
+        id="Python315-Features-Part1"
+        component={Python315Part1}
+        defaultProps={{
+          enableAudio: false,
+        }}
+        durationInFrames={TOTAL_DURATION_IN_FRAMES}
+        fps={FPS}
+        width={VIDEO_WIDTH}
+        height={VIDEO_HEIGHT}
       />
     </>
   );

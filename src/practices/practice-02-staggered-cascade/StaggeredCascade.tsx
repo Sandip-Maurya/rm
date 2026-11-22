@@ -1,6 +1,6 @@
 import React from "react";
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { StaggeredCascadeProps, KpiPillItem } from "./types";
+import type { StaggeredCascadeProps, KpiPillItem } from "./types";
 
 const defaultItems: KpiPillItem[] = [
   { label: "Users", value: "+18%", isPositive: true },

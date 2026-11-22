@@ -1,6 +1,6 @@
 import React from "react";
 import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { DynamicHighlighterProps } from "./types";
+import type { DynamicHighlighterProps } from "./types";
 
 export const DynamicHighlighter: React.FC<DynamicHighlighterProps> = ({
   prefixText = "Ship video apps",
