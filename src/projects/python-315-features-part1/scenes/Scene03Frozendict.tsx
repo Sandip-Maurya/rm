@@ -37,7 +37,10 @@ export const Scene03Frozendict: React.FC = () => {
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "130px 40px 110px 40px",
+        paddingTop: 160,
+        paddingBottom: 380,
+        paddingLeft: 60,
+        paddingRight: 150,
       }}
     >
       <Background accentGlowColor="#38bdf8" />
@@ -58,8 +61,8 @@ export const Scene03Frozendict: React.FC = () => {
         <span
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 20,
-            fontWeight: 800,
+            fontSize: 24,
+            fontWeight: 600,
             color: THEME.pythonYellow,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
@@ -80,10 +83,9 @@ export const Scene03Frozendict: React.FC = () => {
           <span
             style={{
               fontFamily: "JetBrains Mono, Inter, sans-serif",
-              fontSize: 76,
-              fontWeight: 900,
+              fontSize: 82,
+              fontWeight: 800,
               color: "#38bdf8",
-              textShadow: "0 0 40px rgba(56, 189, 248, 0.45)",
               letterSpacing: "-0.03em",
             }}
           >
@@ -91,7 +93,7 @@ export const Scene03Frozendict: React.FC = () => {
           </span>
           <div
             style={{
-              fontSize: 54,
+              fontSize: 60,
               transform: `scale(${lockPop}) rotate(${(1 - lockPop) * 20}deg)`,
               opacity: lockPop,
             }}
@@ -103,10 +105,10 @@ export const Scene03Frozendict: React.FC = () => {
         <div
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 32,
-            fontWeight: 600,
+            fontSize: 38,
+            fontWeight: 400,
             color: "#cbd5e1",
-            maxWidth: 960,
+            maxWidth: 860,
             lineHeight: 1.35,
           }}
         >
@@ -124,8 +126,8 @@ export const Scene03Frozendict: React.FC = () => {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 20,
-          width: 1000,
+          gap: 16,
+          width: 870,
         }}
       >
         {perks.map((perk, i) => {
@@ -153,12 +155,12 @@ export const Scene03Frozendict: React.FC = () => {
                 opacity: perkEntrance,
               }}
             >
-              <span style={{ fontSize: 44, lineHeight: 1 }}>{perk.icon}</span>
+              <span style={{ fontSize: 48, lineHeight: 1 }}>{perk.icon}</span>
               <span
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  fontSize: 24,
-                  fontWeight: 900,
+                  fontSize: 26,
+                  fontWeight: 700,
                   color: "#f8fafc",
                   textAlign: "center",
                   letterSpacing: "-0.01em",

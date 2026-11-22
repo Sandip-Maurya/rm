@@ -20,7 +20,15 @@ export const TOTAL_DURATION_IN_FRAMES =
   SCENE_DURATIONS.unpacking +
   SCENE_DURATIONS.outro; // 690 frames = 23.0s
 
-// Theme Palette (Dark Modern Tech + Python accents)
+// Safe Zone Padding (YouTube Shorts / Reels)
+export const SAFE_ZONE = {
+  top: 160,
+  bottom: 380,
+  left: 60,
+  right: 150, // Clears Right-side Like/Comment rail
+  contentWidth: 870, // 1080 - 60 - 150 = 870px
+};
+
 export const THEME = {
   bg: "#090d16",
   bgSubtle: "#111827",

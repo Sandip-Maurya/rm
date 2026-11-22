@@ -1,0 +1,10 @@
+[project]
+name = "remotion-tts"
+version = "0.1.0"
+description = "Local Kokoro ONNX TTS for Remotion voiceovers"
+requires-python = ">=3.12"
+dependencies = [
+    "kokoro-onnx>=0.6.1",
+    "numpy>=2.5.5",
+    "soundfile>=0.14.0",
+]

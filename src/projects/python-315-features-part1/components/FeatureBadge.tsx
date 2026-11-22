@@ -44,13 +44,13 @@ export const FeatureBadge: React.FC<FeatureBadgeProps> = ({
         opacity: entrance,
       }}
     >
-      <span style={{ fontSize: 44, lineHeight: 1 }}>{icon}</span>
+      <span style={{ fontSize: 48, lineHeight: 1 }}>{icon}</span>
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
         <span
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 28,
-            fontWeight: 900,
+            fontSize: 32,
+            fontWeight: 700,
             color: THEME.pythonYellow,
             letterSpacing: "0.08em",
           }}
@@ -60,8 +60,8 @@ export const FeatureBadge: React.FC<FeatureBadgeProps> = ({
         <span
           style={{
             color: "rgba(255, 255, 255, 0.35)",
-            fontSize: 24,
-            fontWeight: 800,
+            fontSize: 26,
+            fontWeight: 600,
           }}
         >
           /
@@ -69,8 +69,8 @@ export const FeatureBadge: React.FC<FeatureBadgeProps> = ({
         <span
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 26,
-            fontWeight: 800,
+            fontSize: 30,
+            fontWeight: 700,
             color: THEME.textPrimary,
             letterSpacing: "0.08em",
             textTransform: "uppercase",

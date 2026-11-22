@@ -30,7 +30,10 @@ export const Scene01Hook: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "0 60px",
+        paddingTop: 160,
+        paddingBottom: 380,
+        paddingLeft: 60,
+        paddingRight: 150,
       }}
     >
       <Background accentGlowColor={THEME.pythonYellow} />
@@ -38,25 +41,25 @@ export const Scene01Hook: React.FC = () => {
       {/* Top Tag Pill */}
       <div
         style={{
-          padding: "12px 28px",
+          padding: "16px 36px",
           borderRadius: 999,
           backgroundColor: "rgba(250, 204, 21, 0.12)",
           border: `1.5px solid ${THEME.pythonYellow}60`,
           color: THEME.pythonYellow,
           fontFamily: "Inter, sans-serif",
-          fontSize: 20,
-          fontWeight: 800,
+          fontSize: 26,
+          fontWeight: 700,
           letterSpacing: "0.1em",
           transform: `scale(${badgeSpring})`,
           opacity: badgeSpring,
-          marginBottom: 40,
+          marginBottom: 44,
         }}
       >
         {HOOK_COPY.badge}
       </div>
 
       {/* Python Official Dual-Snake Emblem */}
-      <div style={{ marginBottom: 46 }}>
+      <div style={{ marginBottom: 44 }}>
         <PythonLogo size={190} delay={6} />
       </div>
 
@@ -67,7 +70,7 @@ export const Scene01Hook: React.FC = () => {
           flexWrap: "wrap",
           justifyContent: "center",
           gap: "18px 24px",
-          maxWidth: 900,
+          maxWidth: 860,
           textAlign: "center",
           marginBottom: 36,
         }}
@@ -85,13 +88,12 @@ export const Scene01Hook: React.FC = () => {
               style={{
                 display: "inline-block",
                 fontFamily: "Inter, sans-serif",
-                fontSize: 88,
-                fontWeight: 900,
+                fontSize: 104,
+                fontWeight: 800,
                 color: index === 1 ? THEME.pythonYellow : THEME.textPrimary,
-                textShadow: index === 1 ? `0 0 35px ${THEME.pythonYellow}60` : "none",
                 transform: `translateY(${(1 - wordSpring) * 60}px) scale(${wordSpring})`,
                 opacity: wordSpring,
-                lineHeight: 1.1,
+                lineHeight: 1.05,
               }}
             >
               {word}
@@ -104,11 +106,12 @@ export const Scene01Hook: React.FC = () => {
       <div
         style={{
           fontFamily: "Inter, sans-serif",
-          fontSize: 28,
-          fontWeight: 600,
+          fontSize: 36,
+          fontWeight: 400,
           color: THEME.textMuted,
           textAlign: "center",
-          maxWidth: 800,
+          maxWidth: 820,
+          lineHeight: 1.35,
           opacity: spring({
             frame: frame - 42,
             fps,

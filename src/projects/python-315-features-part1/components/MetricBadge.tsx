@@ -24,9 +24,9 @@ export const MetricBadge: React.FC<MetricBadgeProps> = ({ metric, delay = 25 }) 
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        width: 1000,
-        padding: "24px 48px",
-        borderRadius: 24,
+        width: 870,
+        padding: "20px 36px",
+        borderRadius: 22,
         backgroundColor: "rgba(15, 23, 42, 0.96)",
         border: `2px solid ${THEME.cardBorder}`,
         boxShadow: "0 18px 45px rgba(0, 0, 0, 0.6)",
@@ -39,8 +39,8 @@ export const MetricBadge: React.FC<MetricBadgeProps> = ({ metric, delay = 25 }) 
         <span
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 20,
-            fontWeight: 800,
+            fontSize: 22,
+            fontWeight: 700,
             color: "#94a3b8",
             letterSpacing: "0.08em",
             textTransform: "uppercase",
@@ -51,8 +51,8 @@ export const MetricBadge: React.FC<MetricBadgeProps> = ({ metric, delay = 25 }) 
         <span
           style={{
             fontFamily: "JetBrains Mono, monospace",
-            fontSize: 48,
-            fontWeight: 900,
+            fontSize: 54,
+            fontWeight: 700,
             color: THEME.accentRed,
             textDecoration: "line-through",
           }}
@@ -74,7 +74,7 @@ export const MetricBadge: React.FC<MetricBadgeProps> = ({ metric, delay = 25 }) 
           border: `1.5px solid ${THEME.pythonGreen}50`,
         }}
       >
-        <span style={{ fontSize: 24, color: THEME.pythonGreen, fontWeight: 900 }}>⚡ 31x FASTER</span>
+        <span style={{ fontSize: 26, color: THEME.pythonGreen, fontWeight: 700 }}>⚡ 31x FASTER</span>
       </div>
 
       {/* After */}
@@ -82,8 +82,8 @@ export const MetricBadge: React.FC<MetricBadgeProps> = ({ metric, delay = 25 }) 
         <span
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 20,
-            fontWeight: 800,
+            fontSize: 22,
+            fontWeight: 700,
             color: THEME.pythonGreen,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
@@ -94,10 +94,9 @@ export const MetricBadge: React.FC<MetricBadgeProps> = ({ metric, delay = 25 }) 
         <span
           style={{
             fontFamily: "JetBrains Mono, monospace",
-            fontSize: 52,
-            fontWeight: 900,
+            fontSize: 58,
+            fontWeight: 700,
             color: THEME.pythonGreen,
-            textShadow: `0 0 25px ${THEME.pythonGreen}60`,
           }}
         >
           {metric.afterVal}

@@ -27,8 +27,11 @@ export const Scene05Outro: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "0 60px",
-        gap: 36,
+        paddingTop: 160,
+        paddingBottom: 380,
+        paddingLeft: 60,
+        paddingRight: 150,
+        gap: 32,
       }}
     >
       <Background accentGlowColor="#a855f7" />
@@ -52,8 +55,8 @@ export const Scene05Outro: React.FC = () => {
               key={index}
               style={{
                 fontFamily: "Inter, sans-serif",
-                fontSize: 72,
-                fontWeight: 900,
+                fontSize: 84,
+                fontWeight: 800,
                 color: index === 1 ? THEME.pythonYellow : THEME.textPrimary,
                 transform: `scale(${wordSpring}) translateY(${(1 - wordSpring) * 30}px)`,
                 opacity: wordSpring,
@@ -69,7 +72,8 @@ export const Scene05Outro: React.FC = () => {
       <div
         style={{
           fontFamily: "Inter, sans-serif",
-          fontSize: 26,
+          fontSize: 34,
+          fontWeight: 400,
           color: THEME.textMuted,
           textAlign: "center",
         }}
@@ -84,15 +88,15 @@ export const Scene05Outro: React.FC = () => {
           flexDirection: "column",
           gap: 16,
           width: "100%",
-          maxWidth: 640,
+          maxWidth: 680,
           margin: "16px 0",
         }}
       >
         <span
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 16,
-            fontWeight: 800,
+            fontSize: 18,
+            fontWeight: 700,
             color: THEME.textDim,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
@@ -113,7 +117,7 @@ export const Scene05Outro: React.FC = () => {
             <div
               key={idx}
               style={{
-                padding: "18px 28px",
+                padding: "20px 32px",
                 borderRadius: 18,
                 backgroundColor: "rgba(15, 23, 42, 0.9)",
                 border: `1px solid ${pill.color}40`,
@@ -127,14 +131,14 @@ export const Scene05Outro: React.FC = () => {
               <span
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  fontSize: 22,
-                  fontWeight: 800,
+                  fontSize: 26,
+                  fontWeight: 700,
                   color: THEME.textPrimary,
                 }}
               >
                 {pill.label}
               </span>
-              <span style={{ color: pill.color, fontSize: 20 }}>➔</span>
+              <span style={{ color: pill.color, fontSize: 24 }}>➔</span>
             </div>
           );
         })}
@@ -143,14 +147,14 @@ export const Scene05Outro: React.FC = () => {
       {/* Big Action CTA Pill */}
       <div
         style={{
-          padding: "20px 48px",
+          padding: "22px 56px",
           borderRadius: 999,
           background: `linear-gradient(135deg, ${THEME.pythonBlue} 0%, #0284c7 100%)`,
           boxShadow: `0 14px 40px rgba(56, 189, 248, 0.5)`,
           color: "#ffffff",
           fontFamily: "Inter, sans-serif",
-          fontSize: 26,
-          fontWeight: 900,
+          fontSize: 32,
+          fontWeight: 800,
           letterSpacing: "0.04em",
           transform: `scale(${ctaSpring})`,
           opacity: ctaSpring,

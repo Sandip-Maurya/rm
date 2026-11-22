@@ -31,7 +31,10 @@ export const Scene02LazyImports: React.FC = () => {
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "130px 40px 110px 40px",
+        paddingTop: 160,
+        paddingBottom: 380,
+        paddingLeft: 60,
+        paddingRight: 150,
       }}
     >
       <Background accentGlowColor={THEME.pythonBlue} />
@@ -53,8 +56,8 @@ export const Scene02LazyImports: React.FC = () => {
         <span
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 20,
-            fontWeight: 800,
+            fontSize: 24,
+            fontWeight: 600,
             color: THEME.pythonYellow,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
@@ -70,8 +73,8 @@ export const Scene02LazyImports: React.FC = () => {
         <div
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 72,
-            fontWeight: 900,
+            fontSize: 80,
+            fontWeight: 800,
             color: THEME.textPrimary,
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
@@ -84,10 +87,10 @@ export const Scene02LazyImports: React.FC = () => {
         <div
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 32,
-            fontWeight: 600,
+            fontSize: 38,
+            fontWeight: 400,
             color: "#cbd5e1",
-            maxWidth: 960,
+            maxWidth: 860,
             lineHeight: 1.35,
           }}
         >
@@ -123,8 +126,8 @@ export const Scene02LazyImports: React.FC = () => {
             border: `1.5px solid rgba(56, 189, 248, 0.4)`,
             color: "#38bdf8",
             fontFamily: "Inter, sans-serif",
-            fontSize: 24,
-            fontWeight: 800,
+            fontSize: 26,
+            fontWeight: 600,
             transform: `scale(${takeawaySpring})`,
             opacity: takeawaySpring,
           }}

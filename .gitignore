@@ -37,3 +37,11 @@ bun.log*
 !.vscode/settings.json
 .DS_Store
 Thumbs.db
+
+# TTS (kokoro-onnx)
+tools/tts/.venv/
+tools/tts/models/
+tools/tts/out/
+tools/tts/__pycache__/
+# Keep enrolled packs tracked if small; ignore accidental large dumps
+tools/tts/voices/*.pt

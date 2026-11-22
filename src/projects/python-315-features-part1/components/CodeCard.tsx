@@ -60,8 +60,8 @@ export const CodeCard: React.FC<CodeCardProps> = ({
 
     const words = line.split(" ");
     return words.map((token, idx) => {
-      let color = "#ffffff";
-      let fontWeight = 600;
+      let color = "#e2e8f0";
+      let fontWeight = 400; // Standard clean code weight
 
       const cleanWord = token.replace(/[^a-zA-Z]/g, "");
       if (
@@ -75,19 +75,20 @@ export const CodeCard: React.FC<CodeCardProps> = ({
           "frozendict",
         ].includes(cleanWord)
       ) {
-        color = "#c084fc"; // Vibrant purple keyword
-        fontWeight = 800;
+        color = "#c084fc"; // Purple keyword
+        fontWeight = 600;
       } else if (token.includes("(") || token.includes(")")) {
-        color = "#fde047"; // Vibrant yellow function
-        fontWeight = 700;
+        color = "#fde047"; // Yellow function
+        fontWeight = 500;
       } else if (token.startsWith('"') || token.endsWith('"') || token.startsWith("'")) {
         color = "#4ade80"; // Crisp green string
+        fontWeight = 400;
       } else if (token.includes("*")) {
-        color = "#facc15"; // Yellow star unpacking
-        fontWeight = 900;
+        color = "#facc15"; // Star unpacking
+        fontWeight = 600;
       } else if (token.includes("TypeError") || token.includes("💥")) {
         color = "#f87171"; // Red error token
-        fontWeight = 800;
+        fontWeight = 600;
       }
 
       return (
@@ -101,8 +102,8 @@ export const CodeCard: React.FC<CodeCardProps> = ({
   return (
     <div
       style={{
-        width: 1000,
-        borderRadius: 28,
+        width: 870,
+        borderRadius: 24,
         backgroundColor: "rgba(13, 17, 23, 0.95)",
         border: `2px solid ${THEME.cardBorder}`,
         boxShadow: `0 30px 80px rgba(0, 0, 0, 0.7), 0 0 50px ${glowColor}30`,
@@ -134,10 +135,10 @@ export const CodeCard: React.FC<CodeCardProps> = ({
         <span
           style={{
             fontFamily: "JetBrains Mono, monospace",
-            fontSize: 22,
-            color: "#e2e8f0",
-            fontWeight: 700,
-            letterSpacing: "0.03em",
+            fontSize: 20,
+            color: "#94a3b8",
+            fontWeight: 500,
+            letterSpacing: "0.02em",
           }}
         >
           {snippet.filename || "main.py"}
@@ -148,9 +149,9 @@ export const CodeCard: React.FC<CodeCardProps> = ({
           <span
             style={{
               fontFamily: "Inter, sans-serif",
-              fontSize: 18,
-              fontWeight: 800,
-              padding: "6px 16px",
+              fontSize: 16,
+              fontWeight: 700,
+              padding: "4px 14px",
               borderRadius: 8,
               backgroundColor: "rgba(56, 189, 248, 0.2)",
               color: "#38bdf8",
@@ -165,13 +166,13 @@ export const CodeCard: React.FC<CodeCardProps> = ({
         )}
       </div>
 
-      {/* Code Area: Bumped to 35px font with 1.7 line height for high-res vertical clarity */}
+      {/* Code Area: Scaled font to 30px for 870px safe width */}
       <div
         style={{
-          padding: "36px 32px",
+          padding: "30px 24px",
           fontFamily: "JetBrains Mono, 'Fira Code', monospace",
-          fontSize: 34,
-          lineHeight: 1.7,
+          fontSize: 30,
+          lineHeight: 1.65,
           backgroundColor: "#0b0f17",
         }}
       >
@@ -210,7 +211,7 @@ export const CodeCard: React.FC<CodeCardProps> = ({
                   userSelect: "none",
                   textAlign: "right",
                   marginRight: 24,
-                  fontWeight: 700,
+                  fontWeight: 400,
                   opacity: 0.8,
                 }}
               >

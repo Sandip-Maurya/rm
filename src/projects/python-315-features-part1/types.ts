@@ -33,4 +33,5 @@ export interface FeatureContent {
 
 export interface Python315ShortProps {
   enableAudio?: boolean;
+  showSafeZone?: boolean;
 }

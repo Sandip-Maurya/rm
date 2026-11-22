@@ -36,7 +36,10 @@ export const Scene04Unpacking: React.FC = () => {
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "130px 40px 110px 40px",
+        paddingTop: 160,
+        paddingBottom: 380,
+        paddingLeft: 60,
+        paddingRight: 150,
       }}
     >
       <Background accentGlowColor={THEME.pythonYellow} />
@@ -57,8 +60,8 @@ export const Scene04Unpacking: React.FC = () => {
         <span
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 20,
-            fontWeight: 800,
+            fontSize: 24,
+            fontWeight: 600,
             color: THEME.pythonYellow,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
@@ -72,8 +75,8 @@ export const Scene04Unpacking: React.FC = () => {
         <div
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 66,
-            fontWeight: 900,
+            fontSize: 76,
+            fontWeight: 800,
             color: THEME.textPrimary,
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
@@ -85,10 +88,10 @@ export const Scene04Unpacking: React.FC = () => {
         <div
           style={{
             fontFamily: "Inter, sans-serif",
-            fontSize: 32,
-            fontWeight: 600,
+            fontSize: 38,
+            fontWeight: 400,
             color: "#cbd5e1",
-            maxWidth: 960,
+            maxWidth: 860,
             lineHeight: 1.35,
           }}
         >
@@ -104,12 +107,12 @@ export const Scene04Unpacking: React.FC = () => {
       {/* BOTTOM ZONE: 2-Row Stacked Before vs Now Comparison Card */}
       <div
         style={{
-          width: 1000,
+          width: 870,
           display: "flex",
           flexDirection: "column",
-          gap: 14,
-          padding: "24px 32px",
-          borderRadius: 24,
+          gap: 12,
+          padding: "20px 24px",
+          borderRadius: 22,
           backgroundColor: "rgba(15, 23, 42, 0.96)",
           border: `2px solid rgba(250, 204, 21, 0.35)`,
           boxShadow: "0 18px 45px rgba(0, 0, 0, 0.55)",
@@ -132,8 +135,8 @@ export const Scene04Unpacking: React.FC = () => {
           <span
             style={{
               fontFamily: "Inter, sans-serif",
-              fontSize: 18,
-              fontWeight: 800,
+              fontSize: 20,
+              fontWeight: 700,
               color: THEME.accentRed,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
@@ -145,8 +148,8 @@ export const Scene04Unpacking: React.FC = () => {
           <span
             style={{
               fontFamily: "JetBrains Mono, monospace",
-              fontSize: 30,
-              fontWeight: 700,
+              fontSize: 28,
+              fontWeight: 500,
               color: "#cbd5e1",
               letterSpacing: "-0.01em",
             }}
@@ -173,8 +176,8 @@ export const Scene04Unpacking: React.FC = () => {
           <span
             style={{
               fontFamily: "Inter, sans-serif",
-              fontSize: 18,
-              fontWeight: 900,
+              fontSize: 20,
+              fontWeight: 700,
               color: THEME.pythonGreen,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
@@ -186,10 +189,9 @@ export const Scene04Unpacking: React.FC = () => {
           <span
             style={{
               fontFamily: "JetBrains Mono, monospace",
-              fontSize: 30,
-              fontWeight: 900,
+              fontSize: 28,
+              fontWeight: 600,
               color: THEME.pythonYellow,
-              textShadow: `0 0 20px ${THEME.pythonYellow}50`,
             }}
           >
             [x for *row in matrix for x in row]

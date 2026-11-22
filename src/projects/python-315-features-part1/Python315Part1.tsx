@@ -9,10 +9,12 @@ import {
   Scene05Outro,
 } from "./scenes";
 import { AudioTrack } from "./audio/AudioTrack";
+import { SafeZoneGuide } from "./components/SafeZoneGuide";
 import type { Python315ShortProps } from "./types";
 
 export const Python315Part1: React.FC<Python315ShortProps> = ({
   enableAudio = false,
+  showSafeZone = false,
 }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#090d16" }}>
@@ -46,6 +48,9 @@ export const Python315Part1: React.FC<Python315ShortProps> = ({
 
       {/* Zero-friction audio layer (disabled for now) */}
       {enableAudio && <AudioTrack />}
+
+      {/* Visual Safe Zone Guide (useful in Studio) */}
+      {showSafeZone && <SafeZoneGuide />}
     </AbsoluteFill>
   );
 };
