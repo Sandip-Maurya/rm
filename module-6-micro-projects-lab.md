@@ -1,6 +1,6 @@
-# Module 6: Hands-On Micro-Projects & Motion Katas
+# Module 6: Hands-On Micro-Projects & Motion Practice Lab
 
-> **Goal**: Reverse-engineer high-end motion graphics into 24 isolated, single-concept micro-units. For each kata, build the component, inspect it in the Remotion Preview Studio, and render an actual standalone `.mp4` video. If the motion is stiff or unnatural, iterate on the math until it looks professional.
+> **Goal**: Reverse-engineer high-end motion graphics into 24 isolated, single-concept micro-units. For each practice exercise, build the component, inspect it in the Remotion Preview Studio, and render an actual standalone `.mp4` video. If the motion is stiff or unnatural, iterate on the math until it looks professional.
 
 ---
 
@@ -16,19 +16,37 @@ For every exercise in this module, you follow this exact 4-step cadence:
 ### Quick Commands Reference
 * **Launch Preview Studio**:
   ```bash
-  bun dev
+  bun run remotion:studio
   ```
-  *(Opens the visual player at `http://localhost:3000` with scrubbing, frame stepping, and zoom).*
+  *(Opens the visual player with scrubbing, frame stepping, and zoom).*
 * **Render a Specific Exercise to MP4**:
   ```bash
-  npx remotion render <CompositionId> out/<CompositionId>.mp4
+  bun run remotion:render <CompositionId> out/<CompositionId>.mp4
   ```
+
+---
+
+## 📐 Golden Rule for Video Typography & Scale (1080p Canvas)
+
+Web developers often instinctively use standard web font sizes (`14px`–`24px`). In a Full HD (`1920x1080`) video composition, **web-sized typography looks tiny and illegible**.
+
+Always use video-grade typography scales:
+
+| Role in Composition | Web Scale (Too Small) | Video Scale (Recommended) | Examples |
+| :--- | :--- | :--- | :--- |
+| **Hero / Primary Metric** | `36px` - `48px` | **`96px` - `140px`** | Key KPI numbers, single word hooks, main stats |
+| **Banners & News Headlines** | `24px` - `36px` | **`72px` - `90px`** | Breaking news banners, main lower-third titles |
+| **Section Titles / Headers** | `20px` - `24px` | **`40px` - `64px`** | Card titles, lower-third names, category labels |
+| **Subheadlines & Descriptions**| `14px` - `18px` | **`36px` - `46px`** | Banner details, explanatory text lines |
+| **Subheadings & Badges** | `14px` - `16px` | **`24px` - `36px`** | Growth indicators (+14%), tags, pill badges |
+| **Supporting / Footnotes** | `11px` - `13px` | **`20px` - `28px`** | Timestamps, subtitles, status dots (14-22px) |
+| **Card / Container Widths** | `320px` - `400px` | **`860px` - `1720px`** | Cards (`~860px`), Lower-third banners (`~1720px`) |
 
 ---
 
 ## Category A: Core Animation & Physics Primitives
 
-### Kata 01: The "Apple-Style" Stat Card Pop-In
+### Practice 01: The "Apple-Style" Stat Card Pop-In
 * **Concept**: Tuning spring parameters (`damping`, `mass`, `stiffness`) for an organic, tactile pop without rubbery oscillation.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: A dark glassmorphic metric card (`MRR: $84,200`) scales in from `0.8` to `1.0` with a subtle overshoot bounce, while translateY glides from `+40px` to `0px`.
@@ -46,7 +64,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 02: The Staggered Metric Cascade
+### Practice 02: The Staggered Metric Cascade
 * **Concept**: Time-offset indexing (`frame - (index * delay)`) across an array of sibling widgets.
 * **Composition Specs**: `1920x1080`, 30 FPS, 120 frames (4 seconds).
 * **Target Visual**: 4 KPI pill badges (`Users +18%`, `Churn 1.2%`, `NPS 74`, `LTV $480`) slide in one by one in a staircase rhythm.
@@ -63,7 +81,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 03: The Multi-Stage Keyframe Banner (Enter $\to$ Hold $\to$ Exit)
+### Practice 03: The Multi-Stage Keyframe Banner (Enter $\to$ Hold $\to$ Exit)
 * **Concept**: Multi-point piecewise array interpolation with strict clamping.
 * **Composition Specs**: `1920x1080`, 30 FPS, 150 frames (5 seconds).
 * **Target Visual**: A breaking news lower-third banner slides in from the left (frames 0-20), holds steady with a pulsing red live dot (frames 20-120), and slides off to the right (frames 120-140).
@@ -80,7 +98,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 04: The Anticipation & Snap Motion
+### Practice 04: The Anticipation & Snap Motion
 * **Concept**: Applying Disney's 12 principles of animation in code: pulling backward slightly before firing forward.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: A launch button or pill badge pulls back by `-25px` (anticipation) over 10 frames, then rockets forward across the screen to `+600px` with a snappy ease-out.
@@ -99,7 +117,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ## Category B: Kinetic Typography & Text Animation
 
-### Kata 05: The Modern Word-by-Word Kinetic Reveal
+### Practice 05: The Modern Word-by-Word Kinetic Reveal
 * **Concept**: Splitting sentences into space-delimited words and staggering translateY + opacity per word.
 * **Composition Specs**: `1080x1920` (Vertical 9:16), 30 FPS, 120 frames (4 seconds).
 * **Target Visual**: A bold 6-word hook (`"Stop Building Boring Dashboards Today"`) where each word pops up from a clipped baseline in rapid social-media cadence.
@@ -117,7 +135,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 06: The Masked Slide-Up Text (Clip-Path Reveal)
+### Practice 06: The Masked Slide-Up Text (Clip-Path Reveal)
 * **Concept**: Text emerging smoothly from an invisible boundary line using `overflow: hidden` containers.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: An elegant editorial title card where two lines of high-fashion serif typography slide upward from beneath an invisible horizontal floor.
@@ -133,7 +151,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 07: The Terminal Typewriter with Blinking Cursor
+### Practice 07: The Terminal Typewriter with Blinking Cursor
 * **Concept**: String truncation based on frame velocity combined with a modulo cursor blink.
 * **Composition Specs**: `1920x1080`, 30 FPS, 150 frames (5 seconds).
 * **Target Visual**: A macOS terminal window typing `bun add remotion @remotion/core` character-by-character, followed by a blinking green block cursor.
@@ -148,7 +166,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 08: The Dynamic Highlighter / Scribble Accent
+### Practice 08: The Dynamic Highlighter / Scribble Accent
 * **Concept**: Animating an SVG marker stroke or background highlighter box behind a specific keyword.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: A sentence appears; 15 frames later, a bright yellow fluorescent highlighter stroke sweeps horizontally behind the word `"10x Faster"`.
@@ -167,7 +185,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ## Category C: Information Graphics & Data Visualization
 
-### Kata 09: The Smooth Metric Ticker / Rolling Counter
+### Practice 09: The Smooth Metric Ticker / Rolling Counter
 * **Concept**: Float interpolation with `Math.round()`, `Intl.NumberFormat`, and `overshootClamping: true`.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: A giant central metric ticking rapidly from `$0` up to `$4,850,230` with smooth deceleration and green profit pill icon.
@@ -184,7 +202,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 10: The SVG Line Chart Draw-In
+### Practice 10: The SVG Line Chart Draw-In
 * **Concept**: SVG `strokeDasharray` and `strokeDashoffset` animating a multi-point vector line graph.
 * **Composition Specs**: `1920x1080`, 30 FPS, 120 frames (4 seconds).
 * **Target Visual**: An upward trending crypto or stock chart line drawing itself from left to right with a soft glowing linear gradient beneath it.
@@ -202,7 +220,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 11: The Pulsing Data-Point Callout
+### Practice 11: The Pulsing Data-Point Callout
 * **Concept**: Secondary ripple animations triggered when a primary animation finishes.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: Right as a graph reaches its peak (frame 45), a glowing blue dot pops up, emitting 2 expanding and fading radar rings.
@@ -216,7 +234,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 12: The Staggered Bar Chart Comparison
+### Practice 12: The Staggered Bar Chart Comparison
 * **Concept**: Bounded spring heights with synchronized metric labels at the top of each bar.
 * **Composition Specs**: `1920x1080`, 30 FPS, 120 frames (4 seconds).
 * **Target Visual**: 4 vertical comparison bars (`2023`, `2024`, `2025`, `2026`) growing upward from a base axis, each with an animated percentage label tracking its upward growth.
@@ -233,7 +251,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 13: The Donut / Circular Progress Meter
+### Practice 13: The Donut / Circular Progress Meter
 * **Concept**: Circular SVG trigonometry with `strokeDashoffset` and a centered percentage readout.
 * **Composition Specs**: `1080x1080` (Square 1:1), 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: A neon cyan ring filling around a circular dial from 0% to 84%, with the number in the center updating synchronously.
@@ -250,7 +268,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 14: The Infographic Feature Matrix Table
+### Practice 14: The Infographic Feature Matrix Table
 * **Concept**: Grid layout with staggered checkmark vector drawing.
 * **Composition Specs**: `1920x1080`, 30 FPS, 150 frames (5 seconds).
 * **Target Visual**: A "Us vs. Competitors" 3-column table where feature rows reveal one by one, culminating in animated green SVG checkmarks drawing themselves.
@@ -265,7 +283,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ## Category D: Scene Transitions & Camera Motion
 
-### Kata 15: The Seamless Slide & Push Transition
+### Practice 15: The Seamless Slide & Push Transition
 * **Concept**: Chaining scenes using modern `<TransitionSeries>` with `@remotion/transitions`.
 * **Composition Specs**: `1920x1080`, 30 FPS, 120 frames (4 seconds).
 * **Target Visual**: Scene 1 displays a stat; at frame 50, Scene 1 slides out smoothly while Scene 2 pushes in from the right over 15 frames using `slide({ direction: 'from-right' })`.
@@ -291,7 +309,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 16: The Dynamic Camera Zoom (Scale & Pan)
+### Practice 16: The Dynamic Camera Zoom (Scale & Pan)
 * **Concept**: Animating the root container's `transform: scale()` and `transformOrigin` to focus on a detail.
 * **Composition Specs**: `1920x1080`, 30 FPS, 120 frames (4 seconds).
 * **Target Visual**: A full 4-panel dashboard starts at 1.0x scale; at frame 40, the camera smoothly zooms in to 2.2x scale focusing directly on the top-right chart.
@@ -307,7 +325,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 17: The Glassmorphic 3D Card Flip
+### Practice 17: The Glassmorphic 3D Card Flip
 * **Concept**: CSS 3D perspective transforms (`perspective: 1000px`, `rotateY`).
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: A credit card or stat card rotates 180 degrees around its Y-axis, flipping from front face (summary) to back face (detailed breakdown).
@@ -323,7 +341,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 18: The Screen Wipe / Color Slice
+### Practice 18: The Screen Wipe / Color Slice
 * **Concept**: An angled polygon or full-screen banner sweeping across the canvas as an editorial cut.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual**: A bold brand-color diagonal ribbon sweeps from bottom-left to top-right, wiping away Scene A to reveal Scene B underneath.
@@ -338,7 +356,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ## Category E: UI & Product Motion (App Mockups)
 
-### Kata 19: The Animated Cursor & Click Interaction
+### Practice 19: The Animated Cursor & Click Interaction
 * **Concept**: Piecewise coordinate interpolation `[x1, y1] -> [x2, y2]` with spring scale depression.
 * **Composition Specs**: `1920x1080`, 30 FPS, 120 frames (4 seconds).
 * **Target Visual**: A crisp mouse cursor glides from bottom-right to hover over a "Confirm Order" button, clicks (button scales to 0.95 and bounces), and a success badge pops up.
@@ -352,7 +370,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 20: The iOS-Style Notification Toast
+### Practice 20: The iOS-Style Notification Toast
 * **Concept**: Spring entrance from top screen boundary, timed rest interval, and glide-away exit.
 * **Composition Specs**: `1080x1920` (Vertical 9:16), 30 FPS, 120 frames (4 seconds).
 * **Target Visual**: An iOS dynamic island pill expands downward (`translateY: -150px -> 80px`), displays a payment alert, holds for 2 seconds, and slides cleanly back into the notch.
@@ -365,7 +383,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 21: The Ambient Floating Badge (Continuous Sine Motion)
+### Practice 21: The Ambient Floating Badge (Continuous Sine Motion)
 * **Concept**: Infinite periodic oscillation using trigonometric math: $\sin(\text{frame} \times \text{speed})$.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds, looping).
 * **Target Visual**: An infographic badge floats weightlessly with a continuous subtle vertical bob of $\pm 8\text{px}$ and a responsive soft drop-shadow.
@@ -380,7 +398,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ## Category F: Sound & Audio-Reactive Elements
 
-### Kata 22: The SFX-Synced Metric Cascade
+### Practice 22: The SFX-Synced Metric Cascade
 * **Concept**: Aligning exact frame audio triggers (`<Audio>`) to the impact keyframes of spring animations.
 * **Composition Specs**: `1920x1080`, 30 FPS, 90 frames (3 seconds).
 * **Target Visual & Audio**: 3 metric checks land with spring impacts at frames 15, 30, and 45; each impact triggers an exact synchronized audio "pop/chime" SFX.
@@ -394,7 +412,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 23: The Audio Waveform Equalizer
+### Practice 23: The Audio Waveform Equalizer
 * **Concept**: `@remotion/media-utils` sampling driving SVG frequency bars.
 * **Composition Specs**: `1920x1080`, 30 FPS, 150 frames (5 seconds).
 * **Target Visual**: A live neon equalizer bar visualizer dancing responsively to a beat or voiceover track.
@@ -407,7 +425,7 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ---
 
-### Kata 24: The Full Video Promo Snippet (Cap-stone Micro-Ad)
+### Practice 24: The Full Video Promo Snippet (Cap-stone Micro-Ad)
 * **Concept**: Combining kinetic typography, an animated line chart, audio ducking, and transitions into a finished 6-second teaser.
 * **Composition Specs**: `1920x1080`, 30 FPS, 180 frames (6 seconds).
 * **Target Visual & Audio**:
@@ -420,6 +438,6 @@ For every exercise in this module, you follow this exact 4-step cadence:
 
 ## Summary & Next Step
 
-This catalog is your motion design workshop. By working through these katas, you transition from knowing Remotion theory to having an eye for visual timing and the ability to review or prompt AI agents with surgical precision.
+This catalog is your motion design workshop. By working through these practice exercises, you transition from knowing Remotion theory to having an eye for visual timing and the ability to review or prompt AI agents with surgical precision.
 
 Let's now update our master index and move **AI Prompt Engineering & Best Practices** to **Module 7**!
