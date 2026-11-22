@@ -37,6 +37,33 @@ Always use Remotion’s `<Img>` component rather than the HTML `<img>` tag:
 
 ---
 
+## 1b. Video Assets: `<Video />` vs `<OffthreadVideo />`
+
+When embedding video clips (e.g., screen recordings, background loops, talking heads) into your Remotion project:
+
+Remotion gives you two components:
+
+| Component | Architecture | When to Use |
+| :--- | :--- | :--- |
+| **`<Video />`** | Standard HTML5 `<video>` rendered inside Chromium. | Best for fast local preview in Remotion Studio. |
+| **`<OffthreadVideo />`** | Extracts video frames directly via Node.js/FFmpeg outside the browser process. | Best for rendering: eliminates video decoding stutter, handles transparent ProRes/WebM alpha channels, and renders 100% frame-accurately under heavy CPU load. |
+
+```tsx
+import { Video, OffthreadVideo, staticFile } from 'remotion';
+
+export const ClipScene = () => {
+  return (
+    // OffthreadVideo ensures frame-accurate sync even if 4K or heavy codec:
+    <OffthreadVideo
+      src={staticFile("videos/demo-screencast.mp4")}
+      style={{ width: '100%', borderRadius: 16 }}
+    />
+  );
+};
+```
+
+---
+
 ## 2. Asynchronous Data & Fonts: `delayRender()` and `continueRender()`
 
 What if your video needs to fetch data from a REST API or load custom Google Fonts before rendering starts?
@@ -78,7 +105,40 @@ export const RemoteDataScene = () => {
 ```
 
 > **For Fonts:**
-> Use Remotion’s `@remotion/google-fonts` package (e.g., `loadFont()` from `@remotion/google-fonts/Inter`). It automatically wraps `delayRender()` under the hood so fonts are 100% loaded before Frame 0 renders.
+> Use Remotion’s `@remotion/google-fonts` package (e.g., `loadFont()` from `@remotion/google-fonts/Inter`). It automatically wraps `delayRender()` under the hood so fonts are 100% loaded before Frame 0 renders:
+> ```tsx
+> import { loadFont } from "@remotion/google-fonts/Inter";
+> const { fontFamily } = loadFont();
+> ```
+
+---
+
+## 2b. Extracting Media Durations Dynamically (`@remotion/media-utils`)
+
+In automated video generation, you often don't know the exact duration of a user-uploaded audio file or video clip beforehand.
+
+Remotion provides helper functions in `@remotion/media-utils` designed to be used inside `calculateMetadata`:
+
+* `getVideoDuration(src)` / `getVideoDimensions(src)`
+* `getAudioDuration(src)`
+
+```tsx
+import { CalculateMetadataFunction } from "remotion";
+import { getAudioDuration } from "@remotion/media-utils";
+
+export const calculateVoiceoverMetadata: CalculateMetadataFunction<Props> = async ({
+  props,
+}) => {
+  // Read exact duration of the audio voiceover file
+  const audioDurationSec = await getAudioDuration(props.audioUrl);
+  const fps = 30;
+
+  return {
+    // Round up frames + add 1 second (30 frames) buffer at the end:
+    durationInFrames: Math.ceil(audioDurationSec * fps) + 30,
+  };
+};
+```
 
 ---
 

@@ -100,6 +100,25 @@ Remotion provides two different frame hooks:
 
 A `<Sequence>` wraps its children in a `<div>`. By default, it takes up `position: absolute; width: 100%; height: 100%`.
 
+### Layout & Stacking with `<Sequence>`
+
+A `<Sequence>` wraps its children in an absolute container by default.
+
+#### The `layout="none"` Prop:
+By default, `<Sequence>` wraps child elements in an `<AbsoluteFill>` container (`position: absolute; width: 100%; height: 100%`). While great for full-screen scene overlays, this can break layout if you are sequencing items inside a flex container or grid!
+* To prevent `<Sequence>` from creating an absolute wrapper `div`, pass `layout="none"`:
+```tsx
+<div style={{ display: 'flex', gap: 20 }}>
+  {/* layout="none" preserves flexbox flow! */}
+  <Sequence from={0} layout="none">
+    <Card1 />
+  </Sequence>
+  <Sequence from={15} layout="none">
+    <Card2 />
+  </Sequence>
+</div>
+```
+
 ### Overlapping Layers (Video Tracks)
 Because sequences can overlap in time, you can use them like video tracks or layers in After Effects:
 
@@ -186,6 +205,66 @@ What if you want a 15-frame cross-dissolve or slide transition between Scene 1 a
   </Series.Sequence>
 </Series>
 ```
+
+---
+
+## 6. The Modern Transition Architecture: `@remotion/transitions`
+
+While `<Series offset={-15}>` works for manual blending, modern Remotion (v4+) has an official, high-level transition package: **`@remotion/transitions`**.
+
+Install it in your project:
+```bash
+bun add @remotion/transitions
+```
+
+### `<TransitionSeries>`: Declarative Cuts, Slides & Wipes
+
+`<TransitionSeries>` automatically orchestrates scenes and transition animations between them without manual transform calculations:
+
+```tsx
+import { TransitionSeries, linearTiming, springTiming } from '@remotion/transitions';
+import { fade } from '@remotion/transitions/fade';
+import { slide } from '@remotion/transitions/slide';
+import { wipe } from '@remotion/transitions/wipe';
+
+export const ModernExplainer = () => {
+  return (
+    <TransitionSeries>
+      {/* Scene 1 */}
+      <TransitionSeries.Sequence durationInFrames={90}>
+        <IntroScene />
+      </TransitionSeries.Sequence>
+
+      {/* Transition: Slide from right to left over 15 frames */}
+      <TransitionSeries.Transition
+        presentation={slide({ direction: 'from-right' })}
+        timing={linearTiming({ durationInFrames: 15 })}
+      />
+
+      {/* Scene 2 */}
+      <TransitionSeries.Sequence durationInFrames={120}>
+        <ChartScene />
+      </TransitionSeries.Sequence>
+
+      {/* Transition: Clean crossfade */}
+      <TransitionSeries.Transition
+        presentation={fade()}
+        timing={springTiming({ config: { damping: 14 } })}
+      />
+
+      {/* Scene 3 */}
+      <TransitionSeries.Sequence durationInFrames={90}>
+        <OutroScene />
+      </TransitionSeries.Sequence>
+    </TransitionSeries>
+  );
+};
+```
+
+#### Why `<TransitionSeries>` is Superior:
+1. **Automatic Timeline Calculation**: It automatically overlaps scenes during the transition duration without requiring negative offset math.
+2. **Built-in Presentation Effects**: `fade()`, `slide()`, `wipe()`, and `flip()` work out of the box with zero boilerplate.
+3. **Studio Visual Editing**: Remotion Studio recognizes `<TransitionSeries>` cuts and allows visual drag-and-drop adjustments directly on the timeline.
 
 ---
 

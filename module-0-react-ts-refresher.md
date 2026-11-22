@@ -15,40 +15,47 @@ As a Python developer, you already understand types, data structures, and functi
 
 | Python Concept | TypeScript Equivalent | Notes & Video Relevance |
 | :--- | :--- | :--- |
-| `dict[str, Any]` or `dataclass` / Pydantic `BaseModel` | `interface` or `type` | In Remotion, every component, infographic widget, or video scene defines its input data using an `interface` or `type`. |
+| `dict[str, Any]` or `dataclass` / Pydantic `BaseModel` | `interface` or `type` / `zod` schema | In Remotion, every component or video scene defines its input data using an `interface` or Zod schema (`z.object({...})`). |
 | `list[T]` | `T[]` or `Array<T>` | Arrays of data points (e.g., numbers for a bar chart). |
 | `tuple[int, int]` | `[number, number]` | Common in Remotion for ranges, e.g., input/output animation bounds: `[0, 30]`. |
 | `None` | `null` or `undefined` | Optional fields are marked with `?` (e.g. `subtitle?: string`). |
 | `*args` and `**kwargs` | Rest & Spread `...` | Used heavily to unpack styling props or merge animation settings. |
 | Functions (`def foo(x):`) | Arrow Functions `const foo = (x) => ...` | React components are just functions that take props and return visual trees. |
 
-### Code Comparison: Data Contracts
+### Code Comparison: Data Contracts (TypeScript & Zod)
 
-In Python:
+In modern Remotion (v4+), we don't just use plain TypeScript types—we also use **Zod schemas** (via `zod`). Zod gives us both runtime validation and enables the Remotion Studio UI to render editable visual input controls (color pickers, text fields, sliders) automatically!
+
+In Python (Pydantic):
 ```python
-from dataclasses import dataclass
+from pydantic import BaseModel, Field
 from typing import Optional
 
-@dataclass
-class StatCardConfig:
+class StatCardConfig(BaseModel):
     title: str
     target_value: float
     prefix: str = "$"
     color: Optional[str] = "#3b82f6"
 ```
 
-In TypeScript:
+In TypeScript + Zod (Remotion Standard):
 ```typescript
-export interface StatCardConfig {
-  title: string;
-  targetValue: number;
-  prefix?: string; // Optional (defaults if omitted)
-  color?: string;
-}
+import { z } from "zod";
+
+// 1. Runtime schema (powers Remotion Studio UI knobs & CLI argument parsing)
+export const StatCardSchema = z.object({
+  title: z.string(),
+  targetValue: z.number(),
+  prefix: z.string().default("$"),
+  color: z.string().default("#3b82f6"),
+});
+
+// 2. TypeScript compile-time type derived automatically from the schema
+export type StatCardConfig = z.infer<typeof StatCardSchema>;
 ```
 
 > **Why this matters for AI Agents:**
-> When prompting an AI agent to build an infographic, if you declare the TypeScript interface first, the agent writes significantly more predictable, bug-free components.
+> When prompting an AI agent to build a parameterized video template, requesting a Zod schema upfront forces the agent to declare clean data types, provides automatic default values, and prevents invalid CLI prop types during headless renders.
 
 ---
 
@@ -148,6 +155,11 @@ When an AI coding agent writes Remotion code, it often hallucinates typical web 
 #### 3. Careful with `useEffect`
 * In web React, `useEffect` triggers *after* a component mounts.
 * In Remotion, you almost **never** need `useEffect` unless you are doing asset preloading, which Remotion handles via specialized APIs (`delayRender` and `continueRender`).
+
+#### 4. The Leaf-Node Rule: Keep `useCurrentFrame()` as Low as Possible
+* **The Problem**: Whenever a component calls `useCurrentFrame()`, React will re-render that component and all of its children on **every single frame** (30 or 60 times a second).
+* **The Anti-Pattern**: Calling `useCurrentFrame()` at the very root of your scene or composition and passing frame numbers down through dozens of child props.
+* **The Best Practice**: Keep `useCurrentFrame()` localized in the smallest "leaf" component that actually moves. If a header text never changes its opacity or position after frame 20, isolate the animated badge into its own component. Let static containers remain unburdened by frame subscriptions!
 
 ---
 

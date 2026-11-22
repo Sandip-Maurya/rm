@@ -266,13 +266,26 @@ For every exercise in this module, you follow this exact 4-step cadence:
 ## Category D: Scene Transitions & Camera Motion
 
 ### Kata 15: The Seamless Slide & Push Transition
-* **Concept**: Chaining two scenes in `<Series>` with negative offset and coordinating exit/entrance transforms.
+* **Concept**: Chaining scenes using modern `<TransitionSeries>` with `@remotion/transitions`.
 * **Composition Specs**: `1920x1080`, 30 FPS, 120 frames (4 seconds).
-* **Target Visual**: Scene 1 displays a stat; at frame 50, Scene 1 slides out to the left (`0 -> -1920px`) while Scene 2 pushes in from the right (`1920px -> 0px`).
-* **The Math to Practice**:
+* **Target Visual**: Scene 1 displays a stat; at frame 50, Scene 1 slides out smoothly while Scene 2 pushes in from the right over 15 frames using `slide({ direction: 'from-right' })`.
+* **The Architecture to Practice**:
   ```tsx
-  // Coordinated slide:
-  const transition = interpolate(frame, [0, 20], [0, 1], { easing: Easing.bezier(0.16, 1, 0.3, 1), extrapolate: 'clamp' });
+  import { TransitionSeries, linearTiming } from '@remotion/transitions';
+  import { slide } from '@remotion/transitions/slide';
+
+  <TransitionSeries>
+    <TransitionSeries.Sequence durationInFrames={60}>
+      <SceneOne />
+    </TransitionSeries.Sequence>
+    <TransitionSeries.Transition
+      presentation={slide({ direction: 'from-right' })}
+      timing={linearTiming({ durationInFrames: 15 })}
+    />
+    <TransitionSeries.Sequence durationInFrames={75}>
+      <SceneTwo />
+    </TransitionSeries.Sequence>
+  </TransitionSeries>
   ```
 * **Iteration Check**: No black seam or gap should appear between the two scenes during the transition.
 

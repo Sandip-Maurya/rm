@@ -275,7 +275,18 @@ export const TypewriterText = ({ text, charsPerSecond = 20 }: { text: string; ch
 
 ---
 
-## 6. How to Prompt AI Agents for Infographics
+## 6. CSS Frameworks & Animations: Tailwind Best Practices
+
+If you use Tailwind CSS in Remotion (via `@remotion/tailwind` or Tailwind v4):
+
+### The Golden Rule of Tailwind in Remotion:
+* **Allowed & Recommended**: Layout, typography, borders, background colors, flexbox, and grid utilities (`flex`, `grid`, `text-white`, `bg-slate-900`, `rounded-xl`, `border-cyan-500/20`).
+* **Strictly Forbidden**: Any Tailwind animation class (`animate-spin`, `animate-bounce`, `animate-pulse`, `transition-all`, `duration-500`).
+* **Why**: Tailwind CSS animations use CSS keyframes and browser system clocks. During parallel headless rendering, Chromium will drop frames or render empty/stuck states. Always drive transforms and opacities using inline styles powered by `useCurrentFrame()` and `interpolate()` / `spring()`.
+
+---
+
+## 7. How to Prompt AI Agents for Infographics
 
 When you want an AI agent to build a data visual, follow this specification formula:
 

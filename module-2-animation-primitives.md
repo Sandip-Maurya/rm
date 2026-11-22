@@ -109,11 +109,21 @@ const slideY = interpolate(frame, [0, 30], [100, 0], {
 });
 ```
 
-Common Easing Types:
-* `Easing.ease`: Standard ease in/out.
-* `Easing.out(Easing.quad)`: Starts fast, decelerates gracefully to a stop (ideal for incoming infographics).
-* `Easing.in(Easing.quad)`: Starts slow, accelerates away (ideal for exit animations).
-* `Easing.bezier(x1, y1, x2, y2)`: Custom cubic Bézier curves (compatible with CSS curve generators like cubic-bezier.com).
+### Combining Easing Curves & Springs
+Did you know Remotion also provides `Easing.spring()`?
+Inside `interpolate()`, you can supply `Easing.spring()` to give an eased interpolation physics-like bounce without creating a full standalone `spring()` object:
+
+```tsx
+import { interpolate, Easing } from 'remotion';
+
+const scale = interpolate(frame, [0, 25], [0.5, 1], {
+  easing: Easing.spring({ damping: 12, mass: 0.5 }),
+  extrapolateLeft: 'clamp',
+  extrapolateRight: 'clamp',
+});
+```
+
+Use `Easing.spring()` when you want spring-like overshoot within a strictly bounded frame duration `[0, 25]`, and use native `spring({ frame, fps })` when you want natural organic physical decay where duration is dictated purely by the physics.
 
 ---
 

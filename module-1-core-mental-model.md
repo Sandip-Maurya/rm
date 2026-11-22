@@ -83,6 +83,10 @@ The Root component is registered with `registerRoot(RemotionRoot)`. It does not 
 Think of `<Composition />` as the **Contract / Manifest** of a video.
 
 ```tsx
+import { Composition } from "remotion";
+import { z } from "zod";
+import { CustomerGrowthChart, CustomerGrowthSchema } from "./CustomerGrowthChart";
+
 <Composition
   id="CustomerGrowthChart"           // The CLI slug: `npx remotion render CustomerGrowthChart`
   component={CustomerGrowthChart}     // The visual component to render
@@ -90,6 +94,7 @@ Think of `<Composition />` as the **Contract / Manifest** of a video.
   fps={30}                            // Frame rate
   width={1920}                        // Resolution width
   height={1080}                       // Resolution height
+  schema={CustomerGrowthSchema}       // Zod schema for validation & Studio UI controls
   defaultProps={{                     // Default data passed to component
     company: "Acme Analytics",
     dataPoints: [100, 250, 450, 800],
@@ -98,13 +103,48 @@ Think of `<Composition />` as the **Contract / Manifest** of a video.
 />
 ```
 
-#### Why `defaultProps` are Vital:
-Remotion allows overriding props from the command line or via API:
+#### Why `schema` & `defaultProps` are Vital:
+1. **Studio Visual Editing**: When a `schema` is attached, Remotion Studio inspects the types and renders real-time interactive input fields, color pickers, and sliders directly in the UI panel.
+2. **Headless CLI Overrides**: Remotion allows overriding props from the command line or via API:
 ```bash
 # Render with different data without touching code!
 npx remotion render CustomerGrowthChart out.mp4 --props='{"company": "BetaCorp", "dataPoints": [50, 90, 120, 300]}'
 ```
 This is how modern automated video generation pipelines work: you build one reusable motion template, and a Python backend feeds different JSON props to generate hundreds of personalized videos.
+
+### Layer 2b: Dynamic Video Dimensions & Durations (`calculateMetadata`)
+What if your video length or dimensions depend on input props (e.g. an audio voiceover duration, or variable dataset size)? 
+
+Instead of hardcoding `durationInFrames`, use `calculateMetadata`:
+
+```tsx
+import { CalculateMetadataFunction } from "remotion";
+
+const calculateMetadata: CalculateMetadataFunction<CustomerGrowthProps> = async ({
+  props,
+  defaultProps,
+}) => {
+  // Example: compute video duration based on number of data points
+  // 30 frames intro + 15 frames per point + 60 frames outro
+  const computedFrames = 30 + props.dataPoints.length * 15 + 60;
+
+  return {
+    durationInFrames: computedFrames,
+    // You can also dynamically override width, height, fps, or transform props!
+  };
+};
+
+<Composition
+  id="DynamicGrowthChart"
+  component={CustomerGrowthChart}
+  fps={30}
+  width={1920}
+  height={1080}
+  calculateMetadata={calculateMetadata}
+  schema={CustomerGrowthSchema}
+  defaultProps={{ ... }}
+/>
+```
 
 ### Layer 3: Visual Components
 This is where standard React skills come in: building layouts with flexbox, absolute positioning, SVG graphics, typography, and styling.
@@ -129,17 +169,20 @@ In motion graphics, you don't design with scrolling pages in mind. You design wi
 ```
 
 ### Rules of Video Canvas Positioning:
-1. **The Root Container is Always Absolute**:
-   The top-level container of your video component should almost always fill the canvas:
+1. **The Root Container Uses `<AbsoluteFill>`**:
+   Instead of writing custom CSS (`position: absolute; width: 100%; height: 100%`), always use Remotion’s built-in `<AbsoluteFill>` component:
    ```tsx
+   import { AbsoluteFill } from 'remotion';
+
    export const MyScene = () => {
      return (
-       <div style={{ flex: 1, width: '100%', height: '100%', position: 'relative', overflow: 'hidden' }}>
+       <AbsoluteFill style={{ backgroundColor: '#0f172a', justifyContent: 'center', alignItems: 'center' }}>
          {/* Visual elements positioned here */}
-       </div>
+       </AbsoluteFill>
      );
    };
    ```
+   `<AbsoluteFill>` automatically sets `position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; display: flex; flex-direction: column;`. It is the official foundational container for scenes in Remotion.
 2. **Safe Zones for Vertical Video (9:16 - Reels / Shorts)**:
    In vertical formats (`1080x1920`), the top 250px and bottom 350px are covered by platform overlays (profile icons, like buttons, captions, audio tickers). 
    * **Rule for AI Prompts**: *"Keep all primary text, infographics, and charts vertically centered within `Y: 300px` to `Y: 1550px`."*
