@@ -4,6 +4,10 @@ import { StatCard } from "./practices/practice-01-stat-card";
 import { StaggeredCascade } from "./practices/practice-02-staggered-cascade";
 import { KeyframeBanner } from "./practices/practice-03-keyframe-banner";
 import { AnticipationSnap } from "./practices/practice-04-anticipation-snap";
+import { WordByWord } from "./practices/practice-05-word-by-word";
+import { MaskedSlideUp } from "./practices/practice-06-masked-slide-up";
+import { TerminalTypewriter } from "./practices/practice-07-terminal-typewriter";
+import { DynamicHighlighter } from "./practices/practice-08-dynamic-highlighter";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -61,6 +65,60 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           buttonText: "Launch Mission 🚀",
           sublabel: "T-minus zero: Anticipation & Snap Motion",
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice05-WordByWord"
+        component={WordByWord}
+        defaultProps={{
+          text: "Stop Building Boring Dashboards Today",
+          highlightWordIndex: 2,
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="Practice06-MaskedSlideUp"
+        component={MaskedSlideUp}
+        defaultProps={{
+          category: "ANNUAL REPORT 2026",
+          line1: "Quarterly Executive",
+          line2: "Strategic Review",
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice07-TerminalTypewriter"
+        component={TerminalTypewriter}
+        defaultProps={{
+          command: "bun add remotion @remotion/core",
+          userPrompt: "developer@macbook ~ %",
+        }}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice08-DynamicHighlighter"
+        component={DynamicHighlighter}
+        defaultProps={{
+          prefixText: "Ship video apps",
+          highlightedText: "10x Faster",
+          suffixText: "with Remotion",
         }}
         durationInFrames={90}
         fps={30}
