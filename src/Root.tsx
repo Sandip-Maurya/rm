@@ -21,6 +21,21 @@ import { ScreenWipe } from "./practices/practice-18-screen-wipe";
 import { CursorClick } from "./practices/practice-19-cursor-click";
 import { NotificationToast } from "./practices/practice-20-notification-toast";
 import { FloatingBadge } from "./practices/practice-21-floating-badge";
+import { SfxMetricCascade } from "./practices/practice-22-sfx-metric-cascade";
+import { WaveformEqualizer } from "./practices/practice-23-waveform-equalizer";
+import { PromoSnippet } from "./practices/practice-24-promo-snippet";
+import { DepartureBoard } from "./practices/practice-25-departure-board";
+import { CodeHighlighter } from "./practices/practice-26-code-highlighter";
+import { KineticTextWave } from "./practices/practice-27-text-wave";
+import { KaraokePill } from "./practices/practice-28-karaoke-pill";
+import { MultiSeriesAreaChart } from "./practices/practice-29-multi-area-chart";
+import { SpeedometerDial } from "./practices/practice-30-speedometer-dial";
+import { LeaderboardRankSwap } from "./practices/practice-31-leaderboard-swap";
+import { HeatmapMatrix } from "./practices/practice-32-heatmap-matrix";
+import { ParallaxPan } from "./practices/practice-33-parallax-pan";
+import { ZoomThrough } from "./practices/practice-34-zoom-through";
+import { CubeRotation } from "./practices/practice-35-cube-rotation";
+import { GlitchCut } from "./practices/practice-36-glitch-cut";
 import {
   Python315Part1,
   VIDEO_WIDTH,
@@ -343,6 +358,214 @@ export const RemotionRoot: React.FC = () => {
           badgeTitle: "SOC 2 Type II Certified",
           ratingScore: "4.98",
           reviewCount: "2,400+ Enterprise Audits",
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice22-SfxMetricCascade"
+        component={SfxMetricCascade}
+        defaultProps={{
+          title: "Infrastructure Health Check",
+          subtitle: "Deterministic Impact Synchronization • Frame-Accurate Audio Triggers",
+          enableAudio: true,
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice23-WaveformEqualizer"
+        component={WaveformEqualizer}
+        defaultProps={{
+          trackTitle: "Synthesizer Frequency Analysis",
+          artist: "Remotion Neural Audio Engine",
+          audioFile: "audio/python315/scene01_hook.wav",
+          numberOfBars: 32,
+        }}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice24-PromoSnippet"
+        component={PromoSnippet}
+        defaultProps={{
+          problemStatement: "Legacy data stacks are slowing down engineering velocity.",
+          solutionMetric: "+340% Real-Time ARR",
+          metricLabel: "Automated Data Ingestion & Live AI Pipelines",
+          brandName: "REMOTION LABS",
+          tagline: "Ship Production-Grade Video Apps at Web Speed",
+          enableAudio: true,
+        }}
+        durationInFrames={180}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice25-DepartureBoard"
+        component={DepartureBoard}
+        defaultProps={{
+          fromText: "DEPARTED",
+          toText: "BOARDING",
+          sublabel: "GATE 42B • FLIGHT RM-2026 • DIRECT TO SAN FRANCISCO",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice26-CodeHighlighter"
+        component={CodeHighlighter}
+        defaultProps={{
+          filename: "MotionEngine.tsx",
+        }}
+        durationInFrames={240}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice27-KineticTextWave"
+        component={KineticTextWave}
+        defaultProps={{
+          headline: "SUPERCHARGED",
+          badgeText: "PHYSICS ENGINE V2",
+          subtext: "Continuous Sine Waveform Carrier • Per-Character Damped Springs",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice28-KaraokePill"
+        component={KaraokePill}
+        defaultProps={{
+          speaker: "ALEX CHEN // CO-FOUNDER",
+        }}
+        durationInFrames={135}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="Practice29-MultiAreaChart"
+        component={MultiSeriesAreaChart}
+        defaultProps={{
+          title: "Enterprise Cashflow Telemetry",
+          subtitle: "Comparative Multi-Series Area Curves • Real-Time Scanning Crosshair",
+        }}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice30-SpeedometerDial"
+        component={SpeedometerDial}
+        defaultProps={{
+          label: "SYSTEM THROUGHPUT VELOCITY",
+          metricUnit: "GB / SEC",
+          targetScore: 94,
+          substatus: "OPTIMAL CLUSTER BANDWIDTH • INERTIAL SPRING DAMPING",
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1080}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice31-LeaderboardSwap"
+        component={LeaderboardRankSwap}
+        defaultProps={{
+          title: "GLOBAL DEVELOPER LEADERBOARD",
+          subtitle: "Dynamic Layout Physics • Coordinate Interpolation & Rank Swap",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice32-HeatmapMatrix"
+        component={HeatmapMatrix}
+        defaultProps={{
+          title: "CONTINUOUS DEPLOYMENT DENSITY MATRIX",
+          subtitle: "Manhattan Distance Diagonal Wave • Numeric Intensity Scale (112 Cells)",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice33-ParallaxPan"
+        component={ParallaxPan}
+        defaultProps={{
+          headline: "DEEP MULTI-PLANE OPTICAL PARALLAX",
+          badgeText: "CAMERA SYSTEMS // 2.5D DEPTH",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice34-ZoomThrough"
+        component={ZoomThrough}
+        defaultProps={{
+          deviceLabel: "MOBILE CLIENT VIEW // STAGE 01",
+          destinationLabel: "GLOBAL OPERATIONS COMMAND // STAGE 02",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice35-CubeRotation"
+        component={CubeRotation}
+        defaultProps={{
+          face1Title: "FRONT STAGE // INGESTION",
+          face1Metric: "1.4M Events / sec",
+          face2Title: "RIGHT STAGE // ANALYTICS",
+          face2Metric: "99.995% Uptime SLA",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice36-GlitchCut"
+        component={GlitchCut}
+        defaultProps={{
+          scene1Headline: "SYSTEM STATUS // NOMINAL",
+          scene2Headline: "CYBERNETIC BREACH OVERRIDE",
+          glitchStart: 40,
+          glitchDuration: 8,
         }}
         durationInFrames={90}
         fps={30}
