@@ -1,6 +1,6 @@
 import React from "react";
 import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { MetricTickerProps } from "./types";
+import type { MetricTickerProps } from "./types";
 
 export const MetricTicker: React.FC<MetricTickerProps> = ({
   label = "Total Annual Run Rate (ARR)",

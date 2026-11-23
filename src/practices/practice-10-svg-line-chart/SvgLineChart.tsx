@@ -1,6 +1,6 @@
 import React from "react";
 import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { SvgLineChartProps } from "./types";
+import type { SvgLineChartProps } from "./types";
 
 export const SvgLineChart: React.FC<SvgLineChartProps> = ({
   title = "ETH / USD Performance",

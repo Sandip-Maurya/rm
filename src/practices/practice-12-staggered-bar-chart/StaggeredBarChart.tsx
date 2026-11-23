@@ -1,6 +1,6 @@
 import React from "react";
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { StaggeredBarChartProps, BarItem } from "./types";
+import type { StaggeredBarChartProps, BarItem } from "./types";
 
 const defaultBars: BarItem[] = [
   { year: "2023", value: 38, displayValue: "+38%" },

@@ -12,6 +12,16 @@ export * from "./practice-11-pulsing-callout";
 export * from "./practice-12-staggered-bar-chart";
 export * from "./practice-13-donut-meter";
 export * from "./practice-14-feature-matrix";
+export * from "./practice-15-seamless-slide";
+export * from "./practice-16-camera-zoom";
+export * from "./practice-17-3d-card-flip";
+export * from "./practice-18-screen-wipe";
+export * from "./practice-19-cursor-click";
+export * from "./practice-20-notification-toast";
+export * from "./practice-21-floating-badge";
+
+
+
 
 
 

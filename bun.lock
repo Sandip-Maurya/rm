@@ -6,6 +6,7 @@
       "name": "bun-react-template",
       "dependencies": {
         "@remotion/cli": "^4.0.545",
+        "@remotion/transitions": "^4.0.545",
         "bun-plugin-tailwind": "^0.1.2",
         "react": "^19",
         "react-dom": "^19",
@@ -165,6 +166,8 @@
 
     "@remotion/media-utils": ["@remotion/media-utils@4.0.545", "", { "dependencies": { "mediabunny": "1.66.0", "remotion": "4.0.545" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-NM+Kj4PgKlYqQ7eKnBbtBKjfEjuVZ4GW5oBWpST8227lYKNV6c8pVfELdT3pf8eZuftl6van54fg/+s2jkFrOg=="],
 
+    "@remotion/motion-blur": ["@remotion/motion-blur@4.0.545", "", { "dependencies": { "remotion": "4.0.545" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-J1XuaSPqMMbV+vgxVwrCNwTQDv5iwwhYfrkQ4wkoHOCEQ2Og/1apEhfaC7lfwOwzLoCM2RALx5oMtCScZvmPqA=="],
+
     "@remotion/openai-whisper": ["@remotion/openai-whisper@4.0.545", "", { "dependencies": { "@remotion/captions": "4.0.545", "zod": "4.6.7" } }, "sha512-GiHmtclPq/JTzXKGMiapJxKHldJLK5KdF8mzr3D1sFqxk2wqb5ep9ZSPGRBRZ39RYmZOfHGyNDLQ5uaaKqkLTA=="],
 
     "@remotion/paths": ["@remotion/paths@4.0.545", "", { "dependencies": { "remotion": "4.0.545" } }, "sha512-DIobHU3y4PH4LHm/T70S35I8R4kT6iDDQIMpu2Yhnc/NbXJtrNQFco7Xwmcj8Mho/gPchBkEEm/rYaIOzloP7g=="],
@@ -174,6 +177,8 @@
     "@remotion/renderer": ["@remotion/renderer@4.0.545", "", { "dependencies": { "@remotion/licensing": "4.0.545", "@remotion/streaming": "4.0.545", "execa": "5.1.1", "remotion": "4.0.545", "source-map": "0.8.0", "ws": "8.21.0" }, "optionalDependencies": { "@remotion/compositor-darwin-arm64": "4.0.545", "@remotion/compositor-darwin-x64": "4.0.545", "@remotion/compositor-linux-arm64-gnu": "4.0.545", "@remotion/compositor-linux-arm64-musl": "4.0.545", "@remotion/compositor-linux-x64-gnu": "4.0.545", "@remotion/compositor-linux-x64-musl": "4.0.545", "@remotion/compositor-win32-x64-msvc": "4.0.545" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-Hqn5f63Tq1IeOLcZuDC19wEebRdXzLKOBKpQMOd7zvDIB3WCQp+n7tMJaGslnA9pUGKjm8U6T7C+k1Vn96Sh8Q=="],
 
     "@remotion/sdk": ["@remotion/sdk@4.0.545", "", { "dependencies": { "@remotion/player": "4.0.545", "@remotion/studio-shared": "4.0.545", "remotion": "4.0.545" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-Y5RqB/wEWybYhHYGnqmLNtccOWB0yy+nYh/y4gCBOUXFB4WKrxH3OpVdHqyBwl6dK0jQztzLtnuNsMjjqTNRWA=="],
+
+    "@remotion/shapes": ["@remotion/shapes@4.0.545", "", { "dependencies": { "@remotion/paths": "4.0.545", "remotion": "4.0.545" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-Dwp1r/wUDyW+QAfwFROBKmKAH0xbwV9TjK6FjUxcyQXqZINOUHaSpLqlwT7WPj2uK00GeFB0aw2A2B0v+S72sA=="],
 
     "@remotion/streaming": ["@remotion/streaming@4.0.545", "", {}, "sha512-hnidfXkK/S3LxzmxrSIcaYC8TJNm4wAu9ss12Pq8p33blCl3wzvTnHpcfU4Khykiq11Vrl0IWQ/I++rqJFF27A=="],
 
@@ -186,6 +191,8 @@
     "@remotion/studio-shared": ["@remotion/studio-shared@4.0.545", "", { "dependencies": { "remotion": "4.0.545" } }, "sha512-ldIbXLputeaIguWILjVgtC5DgYd+x2MDD0m4zeFiNkVi9VwZX92GHOoNKO9+r5QJ2W0gOCOcUy/dzjAcYeA5IA=="],
 
     "@remotion/timeline-utils": ["@remotion/timeline-utils@4.0.545", "", { "dependencies": { "mediabunny": "1.66.0", "remotion": "4.0.545" } }, "sha512-CfpYEdSPHtbOLBQwrJUuuC83ULVJ8hiowPuwnIenacA2bJFQncFGf5eHlJuYmOaqJHCU5piTxdd7KqG6CG2Vpg=="],
+
+    "@remotion/transitions": ["@remotion/transitions@4.0.545", "", { "dependencies": { "@remotion/motion-blur": "4.0.545", "@remotion/paths": "4.0.545", "@remotion/shapes": "4.0.545", "remotion": "4.0.545" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-NsY+m8U9jt6+BEXhIcyu/fEMC8PWM1XVmQMop6GOlszloJHkAG9ofzQDlAQ5fnnX3SOfio5qtHh3dF2pYIUpPA=="],
 
     "@remotion/web-renderer": ["@remotion/web-renderer@4.0.545", "", { "dependencies": { "@mediabunny/aac-encoder": "1.66.0", "@mediabunny/flac-encoder": "1.66.0", "@mediabunny/mp3-encoder": "1.66.0", "@remotion/licensing": "4.0.545", "mediabunny": "1.66.0", "remotion": "4.0.545" }, "peerDependencies": { "react": ">=18.0.0", "react-dom": ">=18.0.0" } }, "sha512-OSS84BLOED+fqV+NOZEE4WF7tz4wxMYKHt27RnkUmn+jpShEmqm96WMmyB62M9WYSEjNK7wWEKLr2MMpGeY0oA=="],
 

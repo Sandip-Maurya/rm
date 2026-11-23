@@ -1,6 +1,6 @@
 import React from "react";
 import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { PulsingCalloutProps } from "./types";
+import type { PulsingCalloutProps } from "./types";
 
 export const PulsingCallout: React.FC<PulsingCalloutProps> = ({
   calloutTitle = "All-Time Peak Volume",

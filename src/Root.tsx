@@ -14,6 +14,13 @@ import { PulsingCallout } from "./practices/practice-11-pulsing-callout";
 import { StaggeredBarChart } from "./practices/practice-12-staggered-bar-chart";
 import { DonutMeter } from "./practices/practice-13-donut-meter";
 import { FeatureMatrix } from "./practices/practice-14-feature-matrix";
+import { SeamlessSlide } from "./practices/practice-15-seamless-slide";
+import { CameraZoom } from "./practices/practice-16-camera-zoom";
+import { CardFlip3D } from "./practices/practice-17-3d-card-flip";
+import { ScreenWipe } from "./practices/practice-18-screen-wipe";
+import { CursorClick } from "./practices/practice-19-cursor-click";
+import { NotificationToast } from "./practices/practice-20-notification-toast";
+import { FloatingBadge } from "./practices/practice-21-floating-badge";
 import {
   Python315Part1,
   VIDEO_WIDTH,
@@ -236,6 +243,114 @@ export const RemotionRoot: React.FC = () => {
       />
 
       <Composition
+        id="Practice15-SeamlessSlide"
+        component={SeamlessSlide}
+        defaultProps={{
+          scene1Title: "Active Engine Performance",
+          scene1Stat: "120 FPS",
+          scene2Title: "Resource Efficiency Gains",
+          scene2Stat: "+340%",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice16-CameraZoom"
+        component={CameraZoom}
+        defaultProps={{
+          dashboardTitle: "Mission Operations Center",
+          focusWidgetTitle: "Active GPU Cluster Load",
+          focusWidgetValue: "98.4%",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice17-CardFlip3D"
+        component={CardFlip3D}
+        defaultProps={{
+          cardType: "TITANIUM BLACK // METAL EDITION",
+          frontNumber: "•••• •••• •••• 8492",
+          frontHolder: "ALEXANDER CHEN",
+          frontExpiry: "08 / 29",
+          backCvv: "842",
+          backLimit: "$150,000",
+          backStatus: "VIP CONCIERGE ACTIVE",
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice18-ScreenWipe"
+        component={ScreenWipe}
+        defaultProps={{
+          scene1Headline: "Enterprise Intelligence Engine",
+          scene1Subtext: "Phase 01: Real-time Data Ingestion & Stream Processing",
+          scene2Headline: "Next-Gen Analytics Hub",
+          scene2Subtext: "Phase 02: Multi-Model Inference & Live Decisioning",
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice19-CursorClick"
+        component={CursorClick}
+        defaultProps={{
+          productTitle: "Cloud Infrastructure Pro Tier",
+          price: "$249.00 / mo",
+          buttonText: "Confirm & Deploy",
+          successMessage: "Deployment Initiated Successfully!",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice20-NotificationToast"
+        component={NotificationToast}
+        defaultProps={{
+          appName: "Apple Pay",
+          sender: "Stripe Payouts",
+          message: "Funds transferred to High-Yield Checking",
+          amount: "+$4,850.00",
+          timeAgo: "now",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="Practice21-FloatingBadge"
+        component={FloatingBadge}
+        defaultProps={{
+          category: "TOP RATED DEVELOPER TOOL",
+          badgeTitle: "SOC 2 Type II Certified",
+          ratingScore: "4.98",
+          reviewCount: "2,400+ Enterprise Audits",
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
         id="Python315-Features-Part1"
         component={Python315Part1}
         defaultProps={{
@@ -249,4 +364,3 @@ export const RemotionRoot: React.FC = () => {
     </>
   );
 };
-

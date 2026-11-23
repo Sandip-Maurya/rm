@@ -1,6 +1,6 @@
 import React from "react";
 import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { DonutMeterProps } from "./types";
+import type { DonutMeterProps } from "./types";
 
 export const DonutMeter: React.FC<DonutMeterProps> = ({
   label = "SYSTEM EFFICIENCY",

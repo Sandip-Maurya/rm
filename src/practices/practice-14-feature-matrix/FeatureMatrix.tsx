@@ -1,6 +1,6 @@
 import React from "react";
 import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { FeatureMatrixProps, FeatureRowItem } from "./types";
+import type { FeatureMatrixProps, FeatureRowItem } from "./types";
 
 const defaultFeatures: FeatureRowItem[] = [
   { feature: "Real-Time 60 FPS Engine", us: true, competitor: false },
