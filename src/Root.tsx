@@ -137,7 +137,7 @@ export const RemotionRoot: React.FC = () => {
         id="Python315-Features-Part1"
         component={Python315Part1}
         defaultProps={{
-          enableAudio: false,
+          enableAudio: true,
         }}
         durationInFrames={TOTAL_DURATION_IN_FRAMES}
         fps={FPS}

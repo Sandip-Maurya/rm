@@ -66,6 +66,7 @@ export const CodeCard: React.FC<CodeCardProps> = ({
       const cleanWord = token.replace(/[^a-zA-Z]/g, "");
       if (
         [
+          "lazy",
           "import",
           "from",
           "def",

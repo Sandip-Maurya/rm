@@ -3,15 +3,15 @@ import type { PythonSnippet } from "../types";
 export const CODE_SNIPPETS: Record<"lazyImports" | "frozendict" | "unpacking", PythonSnippet> = {
   lazyImports: {
     filename: "app.py",
-    badgeText: "PEP 690",
-    code: `# Modules load only on access!
-import torch
-import pandas as pd
+    badgeText: "PEP 810",
+    code: `# Defer loading until accessed!
+lazy import torch
+lazy import pandas as pd
 
 def run_prediction():
-    # Loaded on demand here ⚡
+    # Only loaded on demand here ⚡
     return torch.load("model.pt")`,
-    highlightLines: [2, 7],
+    highlightLines: [2, 3, 7],
   },
 
   frozendict: {

@@ -4,13 +4,13 @@ export const VIDEO_WIDTH = 1080;
 export const VIDEO_HEIGHT = 1920;
 export const FPS = 30;
 
-// Scene frame durations (@ 30 FPS)
+// Scene frame durations (@ 30 FPS) - Audio-driven from Kokoro TTS
 export const SCENE_DURATIONS: SceneDurationConfig = {
-  hook: 105,        // 3.5s
-  lazyImports: 165, // 5.5s
-  frozendict: 165,  // 5.5s
-  unpacking: 165,   // 5.5s
-  outro: 90,        // 3.0s
+  hook: 175,        // 5.42s audio + 0.4s buffer = 5.83s
+  lazyImports: 270, // 8.60s audio + 0.4s buffer = 9.00s
+  frozendict: 250,  // 7.89s audio + 0.4s buffer = 8.33s
+  unpacking: 230,   // 7.21s audio + 0.4s buffer = 7.66s
+  outro: 135,       // 4.03s audio + 0.5s buffer = 4.50s
 };
 
 export const TOTAL_DURATION_IN_FRAMES =
@@ -18,7 +18,7 @@ export const TOTAL_DURATION_IN_FRAMES =
   SCENE_DURATIONS.lazyImports +
   SCENE_DURATIONS.frozendict +
   SCENE_DURATIONS.unpacking +
-  SCENE_DURATIONS.outro; // 690 frames = 23.0s
+  SCENE_DURATIONS.outro; // 1060 frames = 35.33s
 
 // Safe Zone Padding (YouTube Shorts / Reels)
 export const SAFE_ZONE = {
