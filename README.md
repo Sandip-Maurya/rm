@@ -72,3 +72,7 @@ Focus: **Mental models, video architecture, animation math, and prompt engineeri
 
 ---
 *Created as a living index. Updated as modules complete.*
+
+
+## Voice generation instruction
+Confident and energetic technology trainer speaking naturally to a YouTube Shorts and Insta Reels audience. Clear and conversational pacing with crisp pronunciation and emphasis on numbers, important words/phrases.

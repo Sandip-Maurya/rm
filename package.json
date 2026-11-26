@@ -12,19 +12,24 @@
     "typecheck": "bun check"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.8.2",
     "@remotion/cli": "^4.0.545",
     "@remotion/media-utils": "4.0.545",
+    "@remotion/paths": "4.0.545",
+    "@remotion/three": "4.0.545",
     "@remotion/transitions": "^4.0.545",
     "bun-plugin-tailwind": "^0.1.2",
     "react": "^19",
     "react-dom": "^19",
     "remotion": "^4.0.545",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "three": "^0.187.0"
   },
   "devDependencies": {
+    "@types/bun": "latest",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/bun": "latest"
+    "@types/three": "^0.187.0"
   },
   "peerDependencies": {
     "typescript": "^7"

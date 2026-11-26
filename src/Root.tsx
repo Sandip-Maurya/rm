@@ -36,6 +36,22 @@ import { ParallaxPan } from "./practices/practice-33-parallax-pan";
 import { ZoomThrough } from "./practices/practice-34-zoom-through";
 import { CubeRotation } from "./practices/practice-35-cube-rotation";
 import { GlitchCut } from "./practices/practice-36-glitch-cut";
+import { DeviceMockup } from "./practices/practice-37-device-mockup";
+import { FloatingGeometry } from "./practices/practice-38-floating-geometry";
+import { CameraFlythrough } from "./practices/practice-39-camera-flythrough";
+import { ExtrudedBars } from "./practices/practice-40-extruded-bars";
+import { PhysicsConfetti } from "./practices/practice-41-physics-confetti";
+import { ConstellationMesh } from "./practices/practice-42-constellation-mesh";
+import { AudioParticleOrb } from "./practices/practice-43-audio-particle-orb";
+import { SmokeTrail } from "./practices/practice-44-smoke-trail";
+import { PathMorphing } from "./practices/practice-45-path-morphing";
+import { SimplexWaveforms } from "./practices/practice-46-simplex-waveforms";
+import { NeuralNetwork } from "./practices/practice-47-neural-network";
+import { LissajousPlotter } from "./practices/practice-48-lissajous-plotter";
+import { GlslShader } from "./practices/practice-49-glsl-shader";
+import { ScreenGlare } from "./practices/practice-50-screen-glare";
+import { RetroCrt } from "./practices/practice-51-retro-crt";
+import { MotionBlur } from "./practices/practice-52-motion-blur";
 import {
   Python315Part1,
   VIDEO_WIDTH,
@@ -566,6 +582,229 @@ export const RemotionRoot: React.FC = () => {
           scene2Headline: "CYBERNETIC BREACH OVERRIDE",
           glitchStart: 40,
           glitchDuration: 8,
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice37-DeviceMockup"
+        component={DeviceMockup}
+        defaultProps={{
+          brandTitle: "Remotion 3D",
+          headline: "Metallic Device Orbit",
+          sublabel: "ThreeCanvas • Beveled Extrusion & Specular Rig",
+          accentColor: "#38bdf8",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice38-FloatingGeometry"
+        component={FloatingGeometry}
+        defaultProps={{
+          headline: "IRIDESCENT",
+          subheadline: "SPRING HARMONICS",
+          badgeText: "CATEGORY G // PRACTICE 38",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice39-CameraFlythrough"
+        component={CameraFlythrough}
+        defaultProps={{
+          hudTitle: "CYBER SPLINE TUNNEL",
+          ringCount: 38,
+        }}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice40-ExtrudedBars"
+        component={ExtrudedBars}
+        defaultProps={{
+          title: "3D Revenue Elevation",
+          subtitle: "Spring-Damped Beveled Pillars • Y=0 Floor Pinning & Drop Shadows",
+          bars: [
+            { label: "Q1", valueText: "$1.2M", targetHeight: 1.8, color: "#38bdf8" },
+            { label: "Q2", valueText: "$2.4M", targetHeight: 2.9, color: "#818cf8" },
+            { label: "Q3", valueText: "$3.7M", targetHeight: 4.1, color: "#c084fc" },
+            { label: "Q4", valueText: "$5.2M", targetHeight: 5.4, color: "#34d399" },
+          ],
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice41-PhysicsConfetti"
+        component={PhysicsConfetti}
+        defaultProps={{
+          title: "DETERMINISTIC CONFETTI ENGINE",
+          subtitle: "360 Particles • Analytical Drag, Gravity & 2D Tumble Physics",
+          particleCount: 360,
+          burstFrame: 15,
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice42-ConstellationMesh"
+        component={ConstellationMesh}
+        defaultProps={{
+          title: "PROXIMITY CONSTELLATION MESH",
+          nodeCount: 80,
+          maxDistance: 160,
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice43-AudioParticleOrb"
+        component={AudioParticleOrb}
+        defaultProps={{
+          title: "Audio Reactive Particle Orb",
+          audioFile: "audio/samples/sample-energy-blend-120.wav",
+          particleCount: 380,
+        }}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice44-SmokeTrail"
+        component={SmokeTrail}
+        defaultProps={{
+          title: "FLUID INK & SMOKE TRAIL",
+          subtitle: "Lemniscate Emitter • Deterministic Curl Deflection & Life Culling",
+          maxLife: 42,
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice45-PathMorphing"
+        component={PathMorphing}
+        defaultProps={{
+          title: "Topologic SVG Morphing",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice46-SimplexWaveforms"
+        component={SimplexWaveforms}
+        defaultProps={{
+          title: "Organic Simplex Noise Ribbons",
+          subtitle: "Multi-Octave 2D Procedural Noise • Smooth Edge-Tapered Bezier Splines",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice47-NeuralNetwork"
+        component={NeuralNetwork}
+        defaultProps={{
+          title: "Transformer Neural Architecture",
+          subtitle: "Staggered Layer Topology • Post-Settlement Synaptic Pulse Propagation",
+        }}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice48-LissajousPlotter"
+        component={LissajousPlotter}
+        defaultProps={{
+          title: "Harmonic Lissajous Attractor",
+          freqA: 3,
+          freqB: 4,
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice49-GlslShader"
+        component={GlslShader}
+        defaultProps={{
+          title: "Liquid Chrome Iridescence",
+          subtitle: "Custom WebGL Fragment Shader • Thin-Film Interference & Specular Normals",
+          speedMultiplier: 1,
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice50-ScreenGlare"
+        component={ScreenGlare}
+        defaultProps={{
+          title: "3D Screen Replacement & Glass Glare",
+          screenHeadline: "CLOUD TELEMETRY STUDIO",
+        }}
+        durationInFrames={120}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice51-RetroCrt"
+        component={RetroCrt}
+        defaultProps={{
+          terminalTitle: "REMOTION // VT-420 PHOSPHOR TERMINAL",
+          phosphorColor: "#4ade80",
+        }}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="Practice52-MotionBlur"
+        component={MotionBlur}
+        defaultProps={{
+          cardTitle: "HYPER-VELOCITY RENDER NODE",
+          metricValue: "4,820 px/s",
         }}
         durationInFrames={90}
         fps={30}

@@ -34,6 +34,22 @@ export * from "./practice-33-parallax-pan";
 export * from "./practice-34-zoom-through";
 export * from "./practice-35-cube-rotation";
 export * from "./practice-36-glitch-cut";
+export * from "./practice-37-device-mockup";
+export * from "./practice-38-floating-geometry";
+export * from "./practice-39-camera-flythrough";
+export * from "./practice-40-extruded-bars";
+export * from "./practice-41-physics-confetti";
+export * from "./practice-42-constellation-mesh";
+export * from "./practice-43-audio-particle-orb";
+export * from "./practice-44-smoke-trail";
+export * from "./practice-45-path-morphing";
+export * from "./practice-46-simplex-waveforms";
+export * from "./practice-47-neural-network";
+export * from "./practice-48-lissajous-plotter";
+export * from "./practice-49-glsl-shader";
+export * from "./practice-50-screen-glare";
+export * from "./practice-51-retro-crt";
+export * from "./practice-52-motion-blur";
 
 
 
