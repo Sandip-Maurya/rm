@@ -80,6 +80,13 @@ import {
   FPS as ASYNC_FPS,
   TOTAL_DURATION_IN_FRAMES as ASYNC_FRAMES,
 } from "./projects/project-03-async-fix";
+import {
+  DevRewind,
+  VIDEO_WIDTH as REWIND_WIDTH,
+  VIDEO_HEIGHT as REWIND_HEIGHT,
+  FPS as REWIND_FPS,
+  TOTAL_DURATION_IN_FRAMES as REWIND_FRAMES,
+} from "./projects/project-04-dev-rewind";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -880,6 +887,18 @@ export const RemotionRoot: React.FC = () => {
         fps={ASYNC_FPS}
         width={ASYNC_WIDTH}
         height={ASYNC_HEIGHT}
+      />
+
+      <Composition
+        id="Project04-DevRewind"
+        component={DevRewind}
+        defaultProps={{
+          enableAudio: true,
+        }}
+        durationInFrames={REWIND_FRAMES}
+        fps={REWIND_FPS}
+        width={REWIND_WIDTH}
+        height={REWIND_HEIGHT}
       />
     </>
   );
