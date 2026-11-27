@@ -59,6 +59,13 @@ import {
   FPS,
   TOTAL_DURATION_IN_FRAMES,
 } from "./projects/python-315-features-part1";
+import {
+  DevOpsFlow,
+  VIDEO_WIDTH as DEVOPS_WIDTH,
+  VIDEO_HEIGHT as DEVOPS_HEIGHT,
+  FPS as DEVOPS_FPS,
+  TOTAL_DURATION_IN_FRAMES as DEVOPS_FRAMES,
+} from "./projects/project-02-devops-flow";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -822,6 +829,19 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={VIDEO_WIDTH}
         height={VIDEO_HEIGHT}
+      />
+
+      <Composition
+        id="Project02-DevOpsFlow"
+        component={DevOpsFlow}
+        defaultProps={{
+          enableAudio: true,
+          showSubtitles: true,
+        }}
+        durationInFrames={DEVOPS_FRAMES}
+        fps={DEVOPS_FPS}
+        width={DEVOPS_WIDTH}
+        height={DEVOPS_HEIGHT}
       />
     </>
   );
