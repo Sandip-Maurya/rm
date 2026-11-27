@@ -66,6 +66,20 @@ import {
   FPS as DEVOPS_FPS,
   TOTAL_DURATION_IN_FRAMES as DEVOPS_FRAMES,
 } from "./projects/project-02-devops-flow";
+import {
+  PulseFlow,
+  VIDEO_WIDTH as PULSE_WIDTH,
+  VIDEO_HEIGHT as PULSE_HEIGHT,
+  FPS as PULSE_FPS,
+  TOTAL_DURATION_IN_FRAMES as PULSE_FRAMES,
+} from "./projects/project-01-pulseflow";
+import {
+  AsyncFix,
+  VIDEO_WIDTH as ASYNC_WIDTH,
+  VIDEO_HEIGHT as ASYNC_HEIGHT,
+  FPS as ASYNC_FPS,
+  TOTAL_DURATION_IN_FRAMES as ASYNC_FRAMES,
+} from "./projects/project-03-async-fix";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -832,6 +846,18 @@ export const RemotionRoot: React.FC = () => {
       />
 
       <Composition
+        id="Project01-PulseFlow"
+        component={PulseFlow}
+        defaultProps={{
+          enableAudio: true,
+        }}
+        durationInFrames={PULSE_FRAMES}
+        fps={PULSE_FPS}
+        width={PULSE_WIDTH}
+        height={PULSE_HEIGHT}
+      />
+
+      <Composition
         id="Project02-DevOpsFlow"
         component={DevOpsFlow}
         defaultProps={{
@@ -842,6 +868,18 @@ export const RemotionRoot: React.FC = () => {
         fps={DEVOPS_FPS}
         width={DEVOPS_WIDTH}
         height={DEVOPS_HEIGHT}
+      />
+
+      <Composition
+        id="Project03-AsyncFix"
+        component={AsyncFix}
+        defaultProps={{
+          enableAudio: true,
+        }}
+        durationInFrames={ASYNC_FRAMES}
+        fps={ASYNC_FPS}
+        width={ASYNC_WIDTH}
+        height={ASYNC_HEIGHT}
       />
     </>
   );
